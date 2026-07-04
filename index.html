@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1">
+
+<title>Gender Party | Виктория и Тимофей</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+ --bg:#fbfaf8;
+ --beige:#dcccb8;
+ --beige-dark:#9d8772;
+ --milk:#f7f3ee;
+ --text:#8a7765;
+ --line:#e8dfd5;
+ --shadow:0 12px 30px rgba(180,160,140,.12);
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+
+html{
+ scroll-behavior:smooth;
+}
+
+body{
+ background:#eef3f6;
+ font-family:'Manrope',sans-serif;
+ color:var(--text);
+ overflow-x:hidden;
+ opacity:0;
+ animation:pageFade 1.6s forwards;
+}
+
+@keyframes pageFade{
+ to{
+  opacity:1;
+ }
+}
+
+.wrapper{
+ max-width:430px;
+ margin:auto;
+ background:var(--bg);
+ min-height:100vh;
+ position:relative;
+ overflow:hidden;
+ box-shadow:0 0 50px rgba(0,0,0,.08);
+}
+
+.side-line-left,
+.side-line-right{
+ position:fixed;
+ top:0;
+ bottom:0;
+ width:14px;
+ background:
+ radial-gradient(circle,#dfeaf1 1px,transparent 1px);
+ background-size:8px 8px;
+ opacity:.8;
+ z-index:1;
+}
+
+.side-line-left{
+ left:calc(50% - 230px);
+}
+
+.side-line-right{
+ right:calc(50% - 230px);
+}
+
+.section{
+ padding:70px 28px;
+ text-align:center;
+ position:relative;
+
+ opacity:0;
+ transform:translateY(50px);
+ transition:1.1s;
+}
+
+.section.visible{
+ opacity:1;
+ transform:none;
+}
+
+.title{
+ font-family:'Forum',serif;
+ font-size:34px;
+ letter-spacing:3px;
+ margin-bottom:22px;
+ color:#8d7b69;
+}
+
+.letters span{
+ opacity:0;
+ display:inline-block;
+ transform:translateY(18px);
+ animation:letterAppear .6s forwards;
+}
+
+@keyframes letterAppear{
+ to{
+  opacity:1;
+  transform:none;
+ }
+}
+
+.subtitle{
+ font-size:15px;
+ line-height:1.9;
+ color:#9f8e7e;
+}
+
+.date-big{
+ font-family:'Forum',serif;
+ font-size:74px;
+ line-height:.95;
+ color:#d6c0ab;
+ margin:30px 0;
+}
+
+.hero-elephant{
+ width:88%;
+ max-width:330px;
+ margin:auto;
+ display:block;
+ animation:floatElephant 5s ease-in-out infinite;
+}
+
+@keyframes floatElephant{
+ 0%,100%{
+  transform:translateY(0px);
+ }
+ 50%{
+  transform:translateY(-8px);
+ }
+}
+
+.bunting{
+ width:100%;
+ margin:35px auto;
+ display:block;
+ animation:bunting 4s ease-in-out infinite;
+ transform-origin:center top;
+}
+
+@keyframes bunting{
+ 0%,100%{
+  transform:rotate(-1deg);
+ }
+ 50%{
+  transform:rotate(1deg);
+ }
+}
+
+.location-card{
+ margin-top:28px;
+ background:white;
+ border-radius:28px;
+ padding:28px;
+ box-shadow:var(--shadow);
+}
+
+.location-title{
+ font-family:'Forum',serif;
+ font-size:30px;
+ margin-bottom:18px;
+}
+
+.location-address{
+ line-height:1.9;
+ font-size:15px;
+}
+
+.map-btn{
+ margin-top:26px;
+ display:inline-block;
+ text-decoration:none;
+ background:#d8c3af;
+ color:white;
+ padding:14px 32px;
+ border-radius:999px;
+ font-size:13px;
+ letter-spacing:2px;
+ transition:.35s;
+}
+
+.map-btn:hover{
+ transform:translateY(-3px);
+}
+
+.program-image{
+ width:100%;
+ margin-top:30px;
+ filter:drop-shadow(0 12px 18px rgba(0,0,0,.06));
+}
+
+.program-list{
+ margin-top:30px;
+ text-align:left;
+}
+
+.program-item{
+ background:white;
+ border-radius:24px;
+ padding:18px 20px;
+ margin-bottom:16px;
+ box-shadow:var(--shadow);
+
+ display:flex;
+ gap:16px;
+ align-items:center;
+}
+
+.program-time{
+ min-width:70px;
+
+ font-family:'Forum',serif;
+ font-size:28px;
+ color:#b3957d;
+}
+
+.program-text{
+ font-size:14px;
+ line-height:1.6;
+}
+
+.fade-divider{
+ width:120px;
+ height:1px;
+ background:linear-gradient(
+ to right,
+ transparent,
+ #d8c9bb,
+ transparent
+);
+
+ margin:32px auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- БЛОК 1 -->
+
+<section class="section hero">
+
+<img src="photo4.png"
+     class="hero-elephant"
+     alt="Слоник">
+
+<div style="height:40px"></div>
+
+<h1 class="title letters">
+<span style="animation-delay:.1s">B</span>
+<span style="animation-delay:.15s">o</span>
+<span style="animation-delay:.2s">y</span>
+
+<span style="width:24px"></span>
+
+<span style="animation-delay:.3s">o</span>
+<span style="animation-delay:.35s">r</span>
+
+<span style="width:24px"></span>
+
+<span style="animation-delay:.45s">G</span>
+<span style="animation-delay:.5s">i</span>
+<span style="animation-delay:.55s">r</span>
+<span style="animation-delay:.6s">l</span>
+</h1>
+
+</section>
+
+
+<!-- БЛОК 2 -->
+
+<section class="section">
+
+<h2 class="title">
+ДОРОГИЕ РОДНЫЕ<br>
+И ДРУЗЬЯ!
+</h2>
+
+<p class="subtitle">
+Приглашаем вас на вечеринку,<br>
+где мы вместе узнаем пол<br>
+нашего малыша.
+</p>
+
+<div class="date-big">
+31.07<br>
+2026
+</div>
+
+<div class="fade-divider"></div>
+
+<p class="subtitle">
+Этот день станет одним из самых<br>
+важных и трогательных событий<br>
+в нашей семье.
+</p>
+
+</section>
+
+
+<!-- БЛОК 3 -->
+
+<section class="section">
+
+<h2 class="title">
+МЕСТО ПРОВЕДЕНИЯ
+</h2>
+
+<div class="location-card">
+
+<div class="location-title">
+Ресторан<br>
+Акфес-Сейо
+</div>
+
+<div class="location-address">
+
+Пр. 100-летия Владивостока, 103
+
+<br><br>
+
+Ждём вас в 15:00
+
+</div>
+
+<a class="map-btn"
+href="https://yandex.ru/maps/?text=%D0%9F%D1%80.%20100-%D0%BB%D0%B5%D1%82%D0%B8%D1%8F%20%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%B2%D0%BE%D1%81%D1%82%D0%BE%D0%BA%D0%B0%2C%20103"
+target="_blank">
+
+ЯНДЕКС КАРТЫ
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- БЛОК 4 -->
+
+<section class="section">
+
+<h2 class="title">
+ПРОГРАММА ДНЯ
+</h2>
+
+<img
+src="photo5.png"
+class="program-image"
+alt="Программа">
+
+<div class="program-list">
+
+<div class="program-item">
+<div class="program-time">14:40</div>
+<div class="program-text">
+Сбор гостей
+</div>
+</div>
+
+<div class="program-item">
+<div class="program-time">15:00</div>
+<div class="program-text">
+Welcome-зона<br>
+до 15:40
+</div>
+</div>
+
+<div class="program-item">
+<div class="program-time">16:00</div>
+<div class="program-text">
+Начало программы
+</div>
+</div>
+
+<div class="program-item">
+<div class="program-time">16:40</div>
+<div class="program-text">
+Перерыв
+</div>
+</div>
+
+<div class="program-item">
+<div class="program-time">17:00</div>
+<div class="program-text">
+Узнаём пол малыша
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- БЛОК 5 | DRESS CODE -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<h2 class="title">
+DRESS CODE
+</h2>
+
+<p class="subtitle">
+Если вы думаете, что у нас будет девочка —
+добавьте в образ нежные розовые оттенки.
+</p>
+
+<div class="dress-wrapper">
+
+<div class="dress-card">
+
+<div class="dress-icon">
+👗
+</div>
+
+<div class="dress-color pink"></div>
+
+<p>
+Пастельно-розовый
+</p>
+
+</div>
+
+<div class="heart-divider">
+♡
+</div>
+
+<div class="dress-card">
+
+<div class="dress-icon">
+🍼
+</div>
+
+<div class="dress-color blue"></div>
+
+<p>
+Пастельно-голубой
+</p>
+
+</div>
+
+</div>
+
+<p class="subtitle" style="margin-top:28px">
+Но главное —
+приходите с хорошим настроением ❤️
+</p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- БЛОК 6 | ПОДСКАЗКИ -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<img
+src="photo7.png"
+class="bunting"
+alt="Флажки">
+
+<h2 class="title">
+ПОДСКАЗКИ
+</h2>
+
+<p class="subtitle">
+
+Мы очень ждём вас в этот день!
+
+<br><br>
+
+А если вы захотите сделать нам подарок,
+будем рады вашему вкладу
+в семейный бюджет.
+
+<br><br>
+
+Этому подарку мы точно найдём применение!
+
+</p>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- БЛОК 7 | ТАЙМЕР -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<h2 class="title">
+ДО ВСТРЕЧИ<br>
+ОСТАЛОСЬ
+</h2>
+
+<div id="countdown">
+
+<div class="flip-group">
+
+<div class="flip-box">
+<span id="days">00</span>
+</div>
+
+<div class="flip-label">
+дней
+</div>
+
+</div>
+
+
+<div class="flip-group">
+
+<div class="flip-box">
+<span id="hours">00</span>
+</div>
+
+<div class="flip-label">
+часов
+</div>
+
+</div>
+
+
+<div class="flip-group">
+
+<div class="flip-box">
+<span id="minutes">00</span>
+</div>
+
+<div class="flip-label">
+минут
+</div>
+
+</div>
+
+
+<div class="flip-group">
+
+<div class="flip-box">
+<span id="seconds">00</span>
+</div>
+
+<div class="flip-label">
+секунд
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- БЛОК 8 | RSVP -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<img
+src="photo7.png"
+class="bunting"
+alt="Флажки">
+
+<h2 class="title">
+ЖДЁМ ВАШ ОТВЕТ
+</h2>
+
+<p class="subtitle">
+
+Пожалуйста,
+подтвердите присутствие
+
+<br><br>
+
+до <b>20.07.2026</b>
+
+</p>
+
+</section>
+
+
+
+<style>
+
+.dress-wrapper{
+margin-top:40px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:22px;
+}
+
+.dress-card{
+width:130px;
+background:#fff;
+border-radius:28px;
+padding:24px 14px;
+
+box-shadow:var(--shadow);
+}
+
+.dress-icon{
+font-size:54px;
+margin-bottom:14px;
+}
+
+.dress-color{
+height:8px;
+border-radius:999px;
+margin-bottom:14px;
+}
+
+.pink{
+background:#e8c8cc;
+}
+
+.blue{
+background:#bfd8e8;
+}
+
+.heart-divider{
+font-size:30px;
+color:#cdb8a4;
+font-family:'Forum',serif;
+}
+
+#countdown{
+
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+
+margin-top:40px;
+
+}
+
+.flip-group{
+text-align:center;
+}
+
+.flip-box{
+
+width:78px;
+height:88px;
+
+background:#fff;
+
+border-radius:24px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+box-shadow:var(--shadow);
+
+font-family:'Forum',serif;
+font-size:42px;
+
+color:#8f7964;
+
+animation:flipPulse 1s linear infinite;
+
+transform-style:preserve-3d;
+
+}
+
+@keyframes flipPulse{
+
+0%{
+transform:rotateX(0deg);
+}
+
+50%{
+transform:rotateX(8deg);
+}
+
+100%{
+transform:rotateX(0deg);
+}
+
+}
+
+.flip-label{
+
+margin-top:10px;
+
+font-size:12px;
+letter-spacing:1px;
+text-transform:uppercase;
+
+color:#b09b86;
+
+}
+
+</style>
+
+<!-- ===================================================== -->
+<!-- БЛОК 9 | RSVP -->
+<!-- ===================================================== -->
+
+<section class="section rsvp-section">
+
+<div class="rsvp-overlay"></div>
+
+<h2 class="title">
+ПОДТВЕРЖДЕНИЕ
+</h2>
+
+<p class="subtitle" style="margin-bottom:30px">
+Будем рады видеть вас<br>
+на нашем празднике
+</p>
+
+<form id="rsvpForm" class="rsvp-form">
+
+<label>Ваше имя *</label>
+<input
+type="text"
+name="name"
+required
+placeholder="Введите имя">
+
+<label>Вы придёте? *</label>
+
+<div class="radio-group">
+
+<label class="radio-card">
+<input
+type="radio"
+name="attendance"
+value="Да"
+required>
+
+<span>♡ Да, с удовольствием!</span>
+</label>
+
+<label class="radio-card">
+<input
+type="radio"
+name="attendance"
+value="Нет">
+
+<span>○ К сожалению, не смогу</span>
+</label>
+
+</div>
+
+
+<label>Кто будет? *</label>
+
+<div class="radio-group">
+
+<label class="radio-card">
+<input
+type="radio"
+name="guess"
+value="Мальчик"
+required>
+
+<span>💙 Мальчик</span>
+</label>
+
+<label class="radio-card">
+<input
+type="radio"
+name="guess"
+value="Девочка">
+
+<span>🩷 Девочка</span>
+</label>
+
+</div>
+
+
+<label>Комментарий (по желанию)</label>
+
+<textarea
+name="comment"
+rows="4"
+placeholder="Ваш комментарий..."></textarea>
+
+<button
+type="submit"
+class="submit-btn">
+
+ОТПРАВИТЬ
+
+</button>
+
+</form>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- БЛОК 10 -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="fade-divider"></div>
+
+<p class="subtitle">
+С любовью ждём встречи с вами
+</p>
+
+<h2 class="title"
+style="margin-top:20px">
+
+Виктория и Тимофей
+
+</h2>
+
+<img
+src="photo6.png"
+class="sleep-elephant"
+alt="Спящий слоник">
+
+</section>
+
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- МОДАЛЬНОЕ ОКНО -->
+<!-- ===================================================== -->
+
+<div id="successModal">
+
+<div class="success-card">
+
+<h3>
+Спасибо!
+</h3>
+
+<p>
+Ваш ответ отправлен.
+</p>
+
+<button onclick="closeModal()">
+Закрыть
+</button>
+
+</div>
+
+</div>
+
+
+
+<style>
+
+.rsvp-section{
+
+background:
+linear-gradient(
+rgba(248,244,239,.95),
+rgba(248,244,239,.95)
+);
+
+}
+
+.rsvp-form{
+display:flex;
+flex-direction:column;
+gap:14px;
+
+text-align:left;
+}
+
+.rsvp-form label{
+
+font-size:14px;
+color:#8f7d6d;
+
+margin-top:10px;
+}
+
+.rsvp-form input[type=text],
+.rsvp-form textarea{
+
+width:100%;
+
+padding:16px 18px;
+
+border:1px solid #e8ddd2;
+
+border-radius:18px;
+
+background:white;
+
+font-size:14px;
+
+font-family:Manrope,sans-serif;
+
+outline:none;
+
+}
+
+.radio-group{
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+}
+
+.radio-card{
+
+display:flex;
+align-items:center;
+
+gap:12px;
+
+padding:14px 18px;
+
+background:white;
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+cursor:pointer;
+
+}
+
+.submit-btn{
+
+margin-top:20px;
+
+border:none;
+
+padding:18px;
+
+border-radius:999px;
+
+background:#cdb59d;
+
+color:white;
+
+letter-spacing:3px;
+
+font-size:13px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.sleep-elephant{
+
+width:85%;
+
+max-width:300px;
+
+margin-top:20px;
+
+animation:sleepFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes sleepFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+#successModal{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.35);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+opacity:0;
+visibility:hidden;
+
+transition:.35s;
+
+z-index:999;
+
+}
+
+#successModal.active{
+
+opacity:1;
+visibility:visible;
+
+}
+
+.success-card{
+
+width:300px;
+
+background:#fff;
+
+padding:40px 30px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(0,0,0,.18);
+
+}
+
+.success-card h3{
+
+font-family:'Forum',serif;
+
+font-size:36px;
+
+margin-bottom:12px;
+
+color:#8d7a68;
+
+}
+
+.success-card p{
+
+margin-bottom:20px;
+
+}
+
+.success-card button{
+
+border:none;
+
+padding:12px 30px;
+
+border-radius:999px;
+
+background:#ccb49c;
+
+color:#fff;
+
+cursor:pointer;
+
+}
+
+</style>
+
+
+
+<script>
+
+/* ===========================
+REVEAL
+=========================== */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{threshold:.15});
+
+document
+.querySelectorAll(".section")
+.forEach(el=>observer.observe(el));
+
+
+/* ===========================
+ТАЙМЕР
+=========================== */
+
+const targetDate =
+new Date("2026-07-31T15:00:00");
+
+function updateTimer(){
+
+const now = new Date();
+
+const diff =
+targetDate - now;
+
+if(diff<=0){
+
+document.getElementById("days").innerText = "00";
+document.getElementById("hours").innerText = "00";
+document.getElementById("minutes").innerText = "00";
+document.getElementById("seconds").innerText = "00";
+
+return;
+
+}
+
+const days =
+Math.floor(diff/1000/60/60/24);
+
+const hours =
+Math.floor(
+(diff/1000/60/60)%24
+);
+
+const minutes =
+Math.floor(
+(diff/1000/60)%60
+);
+
+const seconds =
+Math.floor(
+(diff/1000)%60
+);
+
+document.getElementById("days")
+.innerText =
+String(days).padStart(2,"0");
+
+document.getElementById("hours")
+.innerText =
+String(hours).padStart(2,"0");
+
+document.getElementById("minutes")
+.innerText =
+String(minutes).padStart(2,"0");
+
+document.getElementById("seconds")
+.innerText =
+String(seconds).padStart(2,"0");
+
+}
+
+setInterval(updateTimer,1000);
+
+updateTimer();
+
+
+/* ===========================
+GOOGLE SCRIPT
+=========================== */
+
+/*
+ВСТАВИТЬ СЮДА URL
+ВЕБ-ПРИЛОЖЕНИЯ
+*/
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzirNUsnHrCZKTknr4MBbOCEm1V-pF4C41EXx0CSBlcgZeCMoJE3xSWlEnSXr9ShbIQ/exec";
+
+
+document
+.getElementById("rsvpForm")
+.addEventListener("submit",
+
+async function(e){
+
+e.preventDefault();
+
+const form =
+new FormData(this);
+
+const data = {
+
+name:
+form.get("name"),
+
+attendance:
+form.get("attendance"),
+
+guess:
+form.get("guess"),
+
+comment:
+form.get("comment")
+
+};
+
+try{
+
+await fetch(
+SCRIPT_URL,
+{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":
+"application/json"
+},
+body:JSON.stringify(data)
+}
+);
+
+document
+.getElementById("successModal")
+.classList.add("active");
+
+this.reset();
+
+}
+catch(err){
+
+alert(
+"Ошибка отправки"
+);
+
+}
+
+});
+
+
+function closeModal(){
+
+document
+.getElementById("successModal")
+.classList.remove("active");
+
+}
+
+</script>
+
+</body>
+</html>
