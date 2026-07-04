@@ -1179,7 +1179,7 @@ GOOGLE SCRIPT
 ВЕБ-ПРИЛОЖЕНИЯ
 */
 
-const SCRIPT_URL = https://script.google.com/macros/s/AKfycbzirNUsnHrCZKTknr4MBbOCEm1V-pF4C41EXx0CSBlcgZeCMoJE3xSWlEnSXr9ShbIQ/exec
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzirNUsnHrCZKTknr4MBbOCEm1V-pF4C41EXx0CSBlcgZeCMoJE3xSWlEnSXr9ShbIQ/exec"
 
 
 document
