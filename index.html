@@ -129,14 +129,14 @@ body{
 .block2{ padding-bottom:51px; } /* -15% между блоками 2 и 3 */
 .block3{ padding-top:51px; }
 
-.block5{ padding-bottom:51px; } /* -15% между блоками 5 и 6 */
-.block6{ padding-top:51px; }
+.block5{ padding-bottom:32px; } /* было 51px, уменьшено в 1,6 раза */
+.block6{ padding-top:32px; padding-bottom:38px; } /* низ: 60px -> 38px, уменьшено в 1,6 раза (сближение с блоком 7) */
 
-.block7{ padding-bottom:51px; } /* -15% между блоками 7 и 8 */
-.block8{ padding-top:51px; }
+.block7{ padding-bottom:25px; padding-top:38px; } /* было 51px — уменьшено ещё, чтобы флажки были ближе к таймеру */
+.block8{ padding-top:25px; padding-bottom:25px; } /* сверху и снизу уменьшено, флажки ближе и к таймеру, и к форме RSVP */
 
-.block9{ padding-bottom:48px; } /* -20% между блоками 9 и 10 */
-.block10{ padding-top:48px; }
+.block9{ padding-bottom:10px; padding-top:25px; } /* низ уменьшен до минимума — блок 10 идёт сразу после кнопки Отправить */
+.block10{ padding-top:10px; }
 
 .title{
  font-family:'Noteworthy Light',cursive;
@@ -144,6 +144,10 @@ body{
  letter-spacing:1px;
  margin-bottom:22px;
  color:#8d7b69;
+}
+
+.block2 .title{
+ font-size:31px; /* -15% от 36px, только заголовок блока 2 */
 }
 
 .hero-title{
@@ -176,6 +180,15 @@ body{
  line-height:.95;
  color:#d6c0ab;
  margin:30px 0;
+
+ opacity:0;
+ transform:scale(.6);
+ transition:opacity .9s ease .25s, transform .9s cubic-bezier(.22,1,.36,1) .25s;
+}
+
+.section.visible .date-big{
+ opacity:1;
+ transform:scale(1);
 }
 
 .hero-wrap{
@@ -226,7 +239,7 @@ body{
 
 .hero-word{
  position:absolute;
- font-size:32px;
+ font-size:64px;
  letter-spacing:1px;
  color:#8d7b69;
  z-index:3;
@@ -277,30 +290,37 @@ body{
    ==================================================================== */
 
 .dq-tr{
- top:1px;
- right:34px;
- width:53px;
+ top:18px;
+ right:14px;
+ width:150px;
  transform:rotate(10deg);
 }
 
 .dq-bl{
- bottom:31px;
+ bottom:18px;
  left:14px;
- width:53px;
+ width:125px;
  transform:rotate(-12deg);
 }
 
+.dq-tr3{
+ top:14px;
+ right:14px;
+ width:125px;
+ transform:rotate(12deg);
+}
+
 .dq-tl{
- top:10px;
+ top:14px;
  left:18px;
- width:53px;
+ width:138px;
  transform:rotate(-8deg);
 }
 
 .dq-br{
- bottom:30px;
+ bottom:22px;
  right:18px;
- width:53px;
+ width:163px;
  transform:rotate(14deg);
 }
 
@@ -317,6 +337,10 @@ body{
  display:block;
  animation:bunting 4s ease-in-out infinite;
  transform-origin:center top;
+}
+
+.bunting-block6{
+ margin-top:-25px; /* поднимаем флажок выше, ближе к блоку DRESS CODE */
 }
 
 @keyframes bunting{
@@ -345,6 +369,15 @@ body{
 .location-address{
  line-height:1.9;
  font-size:18px;
+
+ opacity:0;
+ transform:scale(.85);
+ transition:opacity .9s ease .3s, transform .9s cubic-bezier(.22,1,.36,1) .3s;
+}
+
+.section.visible .location-address{
+ opacity:1;
+ transform:scale(1);
 }
 
 .map-btn{
@@ -364,56 +397,24 @@ body{
  transform:translateY(-3px);
 }
 
-.program-image{
+.program-photo-wrap{
+ position:relative;
  width:100%;
- margin-top:30px;
+ margin-top:20px;
+}
+
+.program-image-full{
+ width:100%;
+ display:block;
  filter:drop-shadow(0 12px 18px rgba(0,0,0,.06));
 }
 
-.program-list{
- margin-top:30px;
- text-align:left;
-
- display:flex;
- flex-direction:column;
- align-items:center;
-}
-
-.program-item{
- position:relative;
-
- width:100%;
- max-width:230px;
- min-height:130px;
-
- background:url('photo10.png') center / contain no-repeat;
-
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
-
- padding:8px 34px;
-}
-
-.program-arrow{
- width:22px;
- height:22px;
- margin:2px 0;
- color:#cdb8a4;
-}
-
-.program-time{
- font-family:'Noteworthy Light',cursive;
- font-size:24px;
- color:#b3957d;
-}
-
-.program-text{
- font-family:'Inter Tight Regular',sans-serif;
- font-size:11px;
- line-height:1.4;
- text-align:center;
+.dq-below-side{
+ position:absolute;
+ bottom:-40px;
+ right:6%;
+ width:120px;
+ transform:rotate(10deg);
 }
 
 .fade-divider{
@@ -496,6 +497,7 @@ body{
 <section class="section block3">
 
 <img src="photo9.png" class="deco-question dq-bl" alt="">
+<img src="photo9.png" class="deco-question dq-tr3" alt="">
 
 <h2 class="title">
 МЕСТО ПРОВЕДЕНИЯ
@@ -510,7 +512,7 @@ body{
 
 <div class="location-address">
 
-Поспект Столетия Владивостока, 103
+Пр. 100-летия Владивостока, 103
 
 <br><br>
 
@@ -535,68 +537,11 @@ target="_blank">
 
 <section class="section">
 
-<h2 class="title">
-ПРОГРАММА ДНЯ
-</h2>
+<div class="program-photo-wrap">
 
-<img
-src="photo5.png"
-class="program-image"
-alt="Программа">
+<img src="photo11.png" class="program-image-full" alt="Программа дня">
 
-<div class="program-list">
-
-<div class="program-item">
-<div class="program-time">14:40</div>
-<div class="program-text">
-Сбор гостей
-</div>
-</div>
-
-<svg class="program-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 3V20M12 20L6 14M12 20L18 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-<div class="program-item">
-<div class="program-time">15:00</div>
-<div class="program-text">
-Welcome-зона<br>
-до 15:40
-</div>
-</div>
-
-<svg class="program-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 3V20M12 20L6 14M12 20L18 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-<div class="program-item">
-<div class="program-time">16:00</div>
-<div class="program-text">
-Начало программы
-</div>
-</div>
-
-<svg class="program-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 3V20M12 20L6 14M12 20L18 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-<div class="program-item">
-<div class="program-time">16:40</div>
-<div class="program-text">
-Перерыв
-</div>
-</div>
-
-<svg class="program-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 3V20M12 20L6 14M12 20L18 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-<div class="program-item">
-<div class="program-time">17:00</div>
-<div class="program-text">
-Узнаём пол малыша
-</div>
-</div>
+<img src="photo9.png" class="deco-question dq-below-side" alt="">
 
 </div>
 
@@ -665,7 +610,7 @@ alt="Мальчик">
 
 <img
 src="photo7.png"
-class="bunting"
+class="bunting bunting-block6"
 alt="Флажки">
 
 <h2 class="title">
