@@ -10,15 +10,37 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter+Tight:wght@100;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
 
 <style>
 
+/* ==== ЛОКАЛЬНЫЕ ШРИФТЫ ====
+   Положите файлы .woff в папку fonts/ рядом с index.html,
+   с точно такими именами файлов, как указано ниже:
+   fonts/AYearWithoutRain.woff
+   fonts/Noteworthy-Light_0.woff
+   fonts/InterTight-Regular.woff
+*/
+
 @font-face{
  font-family:'A Year Without Rain';
- src:url("https://db.onlinewebfonts.com/t/a99fb6180fb70c73dd76a67da37d965a.woff2") format("woff2"),
-     url("https://db.onlinewebfonts.com/t/a99fb6180fb70c73dd76a67da37d965a.woff") format("woff"),
-     url("https://db.onlinewebfonts.com/t/a99fb6180fb70c73dd76a67da37d965a.ttf") format("truetype");
+ src:url("fonts/AYearWithoutRain.woff") format("woff");
+ font-weight:normal;
+ font-style:normal;
+ font-display:swap;
+}
+
+@font-face{
+ font-family:'Noteworthy Light';
+ src:url("fonts/Noteworthy-Light_0.woff") format("woff");
+ font-weight:normal;
+ font-style:normal;
+ font-display:swap;
+}
+
+@font-face{
+ font-family:'Inter Tight Regular';
+ src:url("fonts/InterTight-Regular.woff") format("woff");
  font-weight:normal;
  font-style:normal;
  font-display:swap;
@@ -46,8 +68,8 @@ html{
 
 body{
  background:#eef3f6;
- font-family:'Inter Tight',sans-serif;
- font-weight:100;
+ font-family:'Inter Tight Regular',sans-serif;
+ font-weight:400;
  color:var(--text);
  overflow-x:hidden;
  opacity:0;
@@ -106,12 +128,29 @@ body{
  transform:none;
 }
 
+/* Уменьшенные промежутки между конкретными блоками */
+.block2{ padding-bottom:51px; } /* -15% между блоками 2 и 3 */
+.block3{ padding-top:51px; }
+
+.block5{ padding-bottom:51px; } /* -15% между блоками 5 и 6 */
+.block6{ padding-top:51px; }
+
+.block7{ padding-bottom:51px; } /* -15% между блоками 7 и 8 */
+.block8{ padding-top:51px; }
+
+.block9{ padding-bottom:48px; } /* -20% между блоками 9 и 10 */
+.block10{ padding-top:48px; }
+
 .title{
- font-family:'A Year Without Rain',cursive;
- font-size:40px;
+ font-family:'Noteworthy Light',cursive;
+ font-size:36px;
  letter-spacing:1px;
  margin-bottom:22px;
  color:#8d7b69;
+}
+
+.hero-title{
+ font-family:'A Year Without Rain',cursive;
 }
 
 .letters span{
@@ -135,7 +174,7 @@ body{
 }
 
 .date-big{
- font-family:'Forum',serif;
+ font-family:'A Year Without Rain',cursive;
  font-size:74px;
  line-height:.95;
  color:#d6c0ab;
@@ -172,25 +211,11 @@ body{
  z-index:1;
 }
 
-.hero-balloon.b1{
- width:15%;
- top:-14%;
- left:2%;
- animation:balloonSway 3.4s ease-in-out infinite;
-}
-
 .hero-balloon.b2{
  width:12%;
  top:-20%;
- left:22%;
+ left:44%;
  animation:balloonSway 4s ease-in-out infinite .4s;
-}
-
-.hero-balloon.b3{
- width:13%;
- top:-16%;
- right:6%;
- animation:balloonSway 3.7s ease-in-out infinite .8s;
 }
 
 @keyframes balloonSway{
@@ -200,6 +225,110 @@ body{
  50%{
   transform:translateY(-10px) rotate(4deg);
  }
+}
+
+.hero-word{
+ position:absolute;
+ font-size:32px;
+ letter-spacing:1px;
+ color:#8d7b69;
+ z-index:3;
+
+ opacity:0;
+ animation:heroWordIn .8s ease forwards;
+}
+
+.hero-word-boy{
+ top:2%;
+ left:0;
+ animation-delay:.3s;
+}
+
+.hero-word-girl{
+ bottom:4%;
+ right:0;
+ animation-delay:.9s;
+}
+
+.hero-question{
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-60%);
+ font-size:96px;
+ color:#cdb8a4;
+ z-index:1;
+
+ opacity:0;
+ animation:heroWordIn .8s ease forwards .6s;
+}
+
+@keyframes heroWordIn{
+ from{
+  opacity:0;
+  transform:translateY(10px);
+ }
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
+}
+
+.hero-question{
+ animation-name:heroQuestionIn;
+}
+
+@keyframes heroQuestionIn{
+ from{
+  opacity:0;
+  transform:translate(-50%,-50%);
+ }
+ to{
+  opacity:1;
+  transform:translate(-50%,-60%);
+ }
+}
+
+.deco-question{
+ position:absolute;
+ opacity:.4;
+ pointer-events:none;
+ z-index:0;
+}
+
+.dq-tr{
+ top:18px;
+ right:14px;
+ width:24px;
+ transform:rotate(10deg);
+}
+
+.dq-bl{
+ bottom:18px;
+ left:14px;
+ width:20px;
+ transform:rotate(-12deg);
+}
+
+.dq-tl{
+ top:14px;
+ left:18px;
+ width:22px;
+ transform:rotate(-8deg);
+}
+
+.dq-br{
+ bottom:22px;
+ right:18px;
+ width:26px;
+ transform:rotate(14deg);
+}
+
+.dq-mid{
+ top:50%;
+ right:10px;
+ width:18px;
+ transform:translateY(-50%) rotate(6deg);
 }
 
 .bunting{
@@ -267,28 +396,33 @@ body{
 }
 
 .program-item{
- background:white;
- border-radius:24px;
- padding:18px 20px;
- margin-bottom:16px;
- box-shadow:var(--shadow);
+ position:relative;
+
+ width:100%;
+ min-height:120px;
+
+ background:url('photo8.png') center / contain no-repeat;
 
  display:flex;
- gap:16px;
+ flex-direction:column;
  align-items:center;
+ justify-content:center;
+
+ padding:8px 34px;
+ margin-bottom:2px;
 }
 
 .program-time{
- min-width:70px;
-
- font-family:'Forum',serif;
- font-size:28px;
+ font-family:'Noteworthy Light',cursive;
+ font-size:24px;
  color:#b3957d;
 }
 
 .program-text{
+ font-family:'Inter Tight Regular',sans-serif;
  font-size:9px;
  line-height:1.4;
+ text-align:center;
 }
 
 .fade-divider{
@@ -317,20 +451,14 @@ body{
 
 <div class="hero-wrap">
 
-<svg class="hero-balloon b1" viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg">
-<line x1="30" y1="58" x2="30" y2="88" stroke="#cdb8a4" stroke-width="1.5"/>
-<ellipse cx="30" cy="32" rx="26" ry="32" fill="#e8c8cc"/>
-</svg>
-
 <svg class="hero-balloon b2" viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg">
 <line x1="30" y1="58" x2="30" y2="88" stroke="#cdb8a4" stroke-width="1.5"/>
 <ellipse cx="30" cy="32" rx="26" ry="32" fill="#f7f3ee"/>
 </svg>
 
-<svg class="hero-balloon b3" viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg">
-<line x1="30" y1="58" x2="30" y2="88" stroke="#cdb8a4" stroke-width="1.5"/>
-<ellipse cx="30" cy="32" rx="26" ry="32" fill="#bfd8e8"/>
-</svg>
+<span class="hero-word hero-word-boy hero-title">Boy</span>
+<span class="hero-question hero-title">?</span>
+<span class="hero-word hero-word-girl hero-title">Girl</span>
 
 <img src="photo4.png"
      class="hero-elephant"
@@ -338,32 +466,14 @@ body{
 
 </div>
 
-<div style="height:40px"></div>
-
-<h1 class="title letters">
-<span style="animation-delay:.1s">B</span>
-<span style="animation-delay:.15s">o</span>
-<span style="animation-delay:.2s">y</span>
-
-<span style="width:24px"></span>
-
-<span style="animation-delay:.3s">o</span>
-<span style="animation-delay:.35s">r</span>
-
-<span style="width:24px"></span>
-
-<span style="animation-delay:.45s">G</span>
-<span style="animation-delay:.5s">i</span>
-<span style="animation-delay:.55s">r</span>
-<span style="animation-delay:.6s">l</span>
-</h1>
-
 </section>
 
 
 <!-- БЛОК 2 -->
 
-<section class="section">
+<section class="section block2">
+
+<img src="photo9.png" class="deco-question dq-tr" alt="">
 
 <h2 class="title">
 ДОРОГИЕ РОДНЫЕ<br>
@@ -394,7 +504,9 @@ body{
 
 <!-- БЛОК 3 -->
 
-<section class="section">
+<section class="section block3">
+
+<img src="photo9.png" class="deco-question dq-bl" alt="">
 
 <h2 class="title">
 МЕСТО ПРОВЕДЕНИЯ
@@ -489,7 +601,7 @@ Welcome-зона<br>
 <!-- БЛОК 5 | DRESS CODE -->
 <!-- ===================================================== -->
 
-<section class="section">
+<section class="section block5">
 
 <h2 class="title">
 DRESS CODE
@@ -542,7 +654,9 @@ alt="Мальчик">
 <!-- БЛОК 6 | ПОДСКАЗКИ -->
 <!-- ===================================================== -->
 
-<section class="section">
+<section class="section block6">
+
+<img src="photo9.png" class="deco-question dq-tl" alt="">
 
 <img
 src="photo7.png"
@@ -576,7 +690,9 @@ alt="Флажки">
 <!-- БЛОК 7 | ТАЙМЕР -->
 <!-- ===================================================== -->
 
-<section class="section">
+<section class="section block7">
+
+<img src="photo9.png" class="deco-question dq-br" alt="">
 
 <h2 class="title">
 ДО ВСТРЕЧИ<br>
@@ -645,7 +761,7 @@ alt="Флажки">
 <!-- БЛОК 8 | RSVP -->
 <!-- ===================================================== -->
 
-<section class="section">
+<section class="section block8">
 
 <img
 src="photo7.png"
@@ -693,7 +809,7 @@ font-family:'Forum',serif;
 
 display:flex;
 justify-content:center;
-gap:6px;
+gap:7px;
 flex-wrap:nowrap;
 
 margin-top:40px;
@@ -706,12 +822,12 @@ text-align:center;
 
 .flip-box{
 
-width:44px;
-height:50px;
+width:53px;
+height:60px;
 
 background:#fff;
 
-border-radius:14px;
+border-radius:17px;
 
 display:flex;
 justify-content:center;
@@ -720,7 +836,7 @@ align-items:center;
 box-shadow:var(--shadow);
 
 font-family:'Forum',serif;
-font-size:24px;
+font-size:29px;
 
 color:#8f7964;
 
@@ -764,7 +880,7 @@ color:#b09b86;
 <!-- БЛОК 9 | RSVP -->
 <!-- ===================================================== -->
 
-<section class="section rsvp-section">
+<section class="section rsvp-section block9">
 
 <div class="rsvp-overlay"></div>
 
@@ -863,7 +979,9 @@ class="submit-btn">
 <!-- БЛОК 10 -->
 <!-- ===================================================== -->
 
-<section class="section">
+<section class="section block10">
+
+<img src="photo9.png" class="deco-question dq-mid" alt="">
 
 <div class="fade-divider"></div>
 
@@ -958,7 +1076,7 @@ background:white;
 
 font-size:14px;
 
-font-family:'Inter Tight',sans-serif;
+font-family:'Inter Tight Regular',sans-serif;
 
 outline:none;
 
